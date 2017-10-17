@@ -42,8 +42,6 @@ length: 5
 
 ## Use an item's index to fetch it from a list.
 
-*   Just like strings.
-
 ~~~
 print('zeroth item of pressures:', pressures[0])
 print('fourth item of pressures:', pressures[4])
@@ -54,6 +52,18 @@ zeroth item of pressures: 0.273
 fourth item of pressures: 0.276
 ~~~
 {: .output}
+
+## Ranges can be returned with a slice notation
+
+~~~
+print('middle three tiems', pressures[1:4])
+print('first three items', pressures[:3]),
+print('last three items', pressures[2:]),
+print('all items', pressures[:])
+~~~
+{: .python}
+
+
 
 ## Lists' values can be replaced by assigning to them.
 
@@ -131,12 +141,6 @@ primes after removing last item: [2, 3, 5, 7]
 ~~~
 {: .output}
 
-## The empty list contains no values.
-
-*   Use `[]` on its own to represent a list that doesn't contain any values.
-    *   "The zero of lists."
-*   Helpful as a starting point for collecting values
-    (which we will see in the [next episode]({{page.root}}/09-for-loops/)).
 
 ## Lists may contain values of different types.
 
