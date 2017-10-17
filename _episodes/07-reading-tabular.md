@@ -73,8 +73,15 @@ print(data)
 
 ## Use `index_col` to specify that a column's values should be used as row headings.
 
-*   Row headings are numbers (0 and 1 in this case).
+*   Row headings are numbers (0 and 1 in this case)
 *   Really want to index by country.
+*   How could I find out how to do that?
+
+~~~
+help(pandas.read_csv)
+~~~
+{: .python}
+
 *   Pass the name of the column to `read_csv` as its `index_col` parameter to do this.
 
 ~~~
@@ -99,6 +106,12 @@ Australia       23424.76683     26997.93657     30687.75473     34435.36744
 New Zealand     18363.32494     21050.41377     23189.80135     25185.00911
 ~~~
 {: .output}
+
+*  What type is `data`?
+
+*  Some functions are built-in
+*  Some functions come from libraries
+*  Some functions are tied to objects.
 
 ## Use `DataFrame.info` to find out more about a dataframe.
 
@@ -152,6 +165,8 @@ Index(['gdpPercap_1952', 'gdpPercap_1957', 'gdpPercap_1962', 'gdpPercap_1967',
 ~~~
 {: .output}
 
+<!--
+
 ## Use `DataFrame.T` to transpose a dataframe.
 
 *   Sometimes want to treat columns as rows and vice versa.
@@ -178,6 +193,8 @@ gdpPercap_2002  30687.75473  23189.80135
 gdpPercap_2007  34435.36744  25185.00911
 ~~~
 {: .output}
+
+-->
 
 ## Use `DataFrame.describe` to get summary statistics about data.
 
