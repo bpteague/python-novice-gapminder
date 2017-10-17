@@ -129,6 +129,7 @@ everything up to but not including the final index.
 
 ## Result of slicing can be used in further operations.
 
+*   What is the data type of a slice??
 *   Usually don't just print a slice.
 *   All the statistical operators that work on entire dataframes
     work the same way on slices.
