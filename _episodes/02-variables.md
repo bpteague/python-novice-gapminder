@@ -21,11 +21,9 @@ keypoints:
 ---
 ## Use variables to store values.
 
-*   Variables are names for values.
+*   Variables are names for stored values.
 *   In Python the `=` symbol assigns the value on the right to the name on the left.
 *   The variable is created when a value is assigned to it.
-*   Here, Python assigns an age to a variable `age`
-    and a name in quotation marks to a variable `first_name`.
 
 ~~~
 age = 42
@@ -33,20 +31,34 @@ first_name = 'Ahmed'
 ~~~
 {: .python}
 
+*   Here, Python assigns an age to a variable `age`
+    and a name in quotation marks to a variable `first_name`.
+
 *   Variable names:
     *   can't start with a digit
     *   can't contain spaces, quotation marks, or other punctuation
     *   *may* contain an underscore (typically used to separate words in long variable names)
-*   Underscores at the start like `__alistairs_real_age` have a special meaning
-    so we won't do that until we understand the convention.
 
 ## Use `print` to display values.
 
+*   *Variables* store values; *functions* are commands.
+*   Or .... if variables are *nouns*, then functions are *verbs*.
+*   Call the function by typing it's name 
+
+~~~
+print("Hello world")
+~~~
+{: .python}
+
 *   Python has a built-in function called `print` that prints things as text.
-*   Call the function (i.e., tell Python to run it) by using its name.
 *   Provide values to the function (i.e., the things to print) in parentheses.
-*   To add a string to the printout, wrap the string in single quotations.
-*   The values passed to the function are called 'arguments'
+
+~~~
+print(first_name)
+~~~
+{: .python}
+
+*   The values passed to the function are called 'arguments'.  
 
 ~~~
 print(first_name, 'is', age, 'years old')
@@ -57,8 +69,9 @@ Ahmed is 42 years old
 ~~~
 {: .output}
 
-*   `print` automatically puts a single space between items to separate them.
-*   And wraps around to a new line at the end.
+*   `print` takes an unlimited number of arguments and prints them all with
+    a single space between them, then adds a carriage return at the end.
+
 
 ## Variables must be created before they are used.
 
@@ -106,66 +119,6 @@ print('Age in three years:', age)
 Age in three years: 45
 ~~~
 {: .output}
-
-## Use an index to get a single character from a string.
-
-*   The characters (individual letters, numbers, and so on) in a string are
-    ordered. For example, the string 'AB' is not the same as 'BA'. Because of
-    this ordering, we can treat the string as a list of characters.
-*   Each position in the string (first, second, etc.) is given a number. This
-    number is called an index or sometimes a subscript.
-*   Indices are numbered from 0.
-*   Use the position's index in square brackets to get the character at that
-    position.
-
-~~~
-atom_name = 'helium'
-print(atom_name[0])
-~~~
-{: .python}
-~~~
-h
-~~~
-{: .output}
-
-## Use a slice to get a substring.
-
-*   A part of a string is called a substring. A substring can be as short as a
-    single character.
-*   An item in a list is called an element. Whenever we treat a string as if it
-    were a list, the string's elements are its individual characters.
-*   A slice is a part of a string (or, more generally, any list-like thing).
-*   We take a slice by using `[start:stop]`, where `start` is replaced with the
-    index of the first element we want and `stop` is replaced with the index of
-    the element just after the last element we want.
-*   Mathematically, you might say that a slice selects `[start:stop)`.
-*   The difference between stop and start is the slice's length.
-*   Taking a slice does not change the contents of the original string. Instead,
-    the slice is a copy of part of the original string.
-
-~~~
-atom_name = 'sodium'
-print(atom_name[0:3])
-~~~
-{: .python}
-~~~
-sod
-~~~
-{: .output}
-
-## Use the built-in function `len` to find the length of a string.
-
-~~~
-print(len('helium'))
-~~~
-{: .python}
-~~~
-6
-~~~
-{: .output}
-
-*   Nested functions are evaluated from the inside out,
-    just like in mathematics.
 
 ## Python is case-sensitive.
 
@@ -220,6 +173,95 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 >{: .solution}
 {: .challenge}
 
+
+
+
+## Use an index to get a single character from a string.
+
+*   The characters (individual letters, numbers, and so on) in a string are
+    ordered. For example, the string 'AB' is not the same as 'BA'. Because of
+    this ordering, we can treat the string as a list of characters.
+*   Each position in the string (first, second, etc.) is given a number. This
+    number is called an index or sometimes a subscript.
+*   Indices are numbered from 0.
+*   Use the position's index in square brackets to get the character at that
+    position.
+
+~~~
+atom_name = 'helium'
+print(atom_name[0])
+~~~
+{: .python}
+~~~
+h
+~~~
+{: .output}
+
+
+> ## Choosing a Name
+>
+> Which is a better variable name, `m`, `min`, or `minutes`?
+> Why?
+> Hint: think about which code you would rather inherit
+> from someone who is leaving the lab:
+>
+> 1. `ts = m * 60 + s`
+> 2. `tot_sec = min * 60 + sec`
+> 3. `total_seconds = minutes * 60 + seconds`
+>
+> > ## Solution
+> >
+> > `minutes` is better because `min` might mean something like "minimum"
+> > (and actually does in Python, but we haven't seen that yet).
+> {: .solution}
+{: .challenge}
+
+
+<!--
+
+## Use a slice to get a substring.
+
+*   A part of a string is called a substring. A substring can be as short as a
+    single character.
+*   An item in a list is called an element. Whenever we treat a string as if it
+    were a list, the string's elements are its individual characters.
+*   A slice is a part of a string (or, more generally, any list-like thing).
+*   We take a slice by using `[start:stop]`, where `start` is replaced with the
+    index of the first element we want and `stop` is replaced with the index of
+    the element just after the last element we want.
+*   Mathematically, you might say that a slice selects `[start:stop)`.
+*   The difference between stop and start is the slice's length.
+*   Taking a slice does not change the contents of the original string. Instead,
+    the slice is a copy of part of the original string.
+
+~~~
+atom_name = 'sodium'
+print(atom_name[0:3])
+~~~
+{: .python}
+~~~
+sod
+~~~
+{: .output}
+
+## Use the built-in function `len` to find the length of a string.
+
+~~~
+print(len('helium'))
+~~~
+{: .python}
+~~~
+6
+~~~
+{: .output}
+
+*   Nested functions are evaluated from the inside out,
+    just like in mathematics.
+
+
+
+
+
 > ## Predicting Values
 >
 > What is the final value of `position` in the program below?
@@ -268,24 +310,6 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > {: .solution}
 {: .challenge}
 
-> ## Choosing a Name
->
-> Which is a better variable name, `m`, `min`, or `minutes`?
-> Why?
-> Hint: think about which code you would rather inherit
-> from someone who is leaving the lab:
->
-> 1. `ts = m * 60 + s`
-> 2. `tot_sec = min * 60 + sec`
-> 3. `total_seconds = minutes * 60 + seconds`
->
-> > ## Solution
-> >
-> > `minutes` is better because `min` might mean something like "minimum"
-> > (and actually does in Python, but we haven't seen that yet).
-> {: .solution}
-{: .challenge}
-
 > ## Slicing
 >
 > What does the following program print?
@@ -306,3 +330,7 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 > 4.  What does `thing[:]` (just a colon) do?
 > 5.  What does `thing[number:negative-number]` do?
 {: .challenge}
+
+-->
+
+
