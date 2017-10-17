@@ -174,6 +174,27 @@ print(ewr_422_yY, 'is', flabadab, 'years old')
 {: .challenge}
 
 
+> ## Choosing a Name
+>
+> Which is a better variable name, `m`, `min`, or `minutes`?
+> Why?
+> Hint: think about which code you would rather inherit
+> from someone who is leaving the lab:
+>
+> 1. `ts = m * 60 + s`
+> 2. `tot_sec = min * 60 + sec`
+> 3. `total_seconds = minutes * 60 + seconds`
+>
+> > ## Solution
+> >
+> > `minutes` is better because `min` might mean something like "minimum"
+> > (and actually does in Python, but we haven't seen that yet).
+> {: .solution}
+{: .challenge}
+
+
+<!--
+
 
 
 ## Use an index to get a single character from a string.
@@ -197,27 +218,6 @@ h
 ~~~
 {: .output}
 
-
-> ## Choosing a Name
->
-> Which is a better variable name, `m`, `min`, or `minutes`?
-> Why?
-> Hint: think about which code you would rather inherit
-> from someone who is leaving the lab:
->
-> 1. `ts = m * 60 + s`
-> 2. `tot_sec = min * 60 + sec`
-> 3. `total_seconds = minutes * 60 + seconds`
->
-> > ## Solution
-> >
-> > `minutes` is better because `min` might mean something like "minimum"
-> > (and actually does in Python, but we haven't seen that yet).
-> {: .solution}
-{: .challenge}
-
-
-<!--
 
 ## Use a slice to get a substring.
 
