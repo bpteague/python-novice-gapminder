@@ -45,8 +45,18 @@ print(type(52))
 {: .output}
 
 ~~~
-fitness = 'average'
-print(type(fitness))
+print(type(55.5))
+~~~
+{: .python}
+~~~
+<class 'float'>
+~~~
+{: .output}
+
+
+~~~
+hair_color = 'brown'
+print(type(hair_color))
 ~~~
 {: .python}
 ~~~
@@ -80,6 +90,162 @@ TypeError                                 Traceback (most recent call last)
 TypeError: unsupported operand type(s) for -: 'str' and 'str'
 ~~~
 {: .error}
+
+
+## Must convert numbers to strings or vice versa when operating on them.
+
+*   Cannot add numbers and strings.
+
+~~~
+print(1 + 'A')
+~~~
+{: .python}
+~~~
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-4-fe4f54a023c6> in <module>()
+----> 1 print(1 + '2')
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+~~~
+{: .error}
+
+*   Not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
+*   Some types can be converted to other types by using the type name as a function.
+
+~~~
+print(1 + int('2'))
+print(str(1) + '2')
+~~~
+{: .python}
+~~~
+3
+12
+~~~
+{: .output}
+
+
+
+> ## Automatic Type Conversion
+>
+> What type of value is 3.25 + 4?
+>
+> > ## Solution
+> >
+> > It is a float:
+> > integers are automatically converted to floats as necessary.
+> >
+> > ~~~
+> > result = 3.25 + 4
+> > print(result, 'is', type(result))
+> > ~~~
+> > {: .python}
+> > ~~~
+> > 7.25 is <class 'float'>
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
+> ## Arithmetic with Different Types
+>
+> Which of the following will print 2.0?
+> Note: there may be more than one right answer.
+>
+> ~~~
+> first = 1.0
+> second = "1"
+> third = "1.1"
+> ~~~
+> {: .python}
+>
+> 1. `first + float(second)`
+> 2. `float(second) + float(third)`
+> 3. `first + int(third)`
+> 4. `first + int(float(third))`
+> 5. `int(first) + int(float(third))`
+> 6. `2.0 * second`
+>
+> > ## Solution
+> >
+> > Answer: 1 and 4
+> {: .solution}
+{: .challenge}
+
+> ## Operations on strings
+>
+> Sometimes arithmetic operators are defined on non-numbers.  This can
+> make code confusing to read, so use it with care!  Try the following
+> commands:
+>
+> ~~~
+> first_name = "Ahmed"
+> last_name = "Walsh"
+> print(first_name + last_name)
+>
+> print("abc" * 5)
+> ~~~
+> {: .python}
+> 
+> What do the `+` and `*` operators do to strings?
+>
+> > ## Solution
+> >
+> > `+` concatenates strings; `*` repeats them.
+> {: .solution}
+{: .challenge}
+
+
+
+
+<!--
+
+
+## Can mix integers and floats freely in operations.
+
+*   Integers and floating-point numbers can be mixed in arithmetic.
+    *   Python automatically converts integers to floats as needed.
+
+~~~
+print('half is', 1 / 2.0)
+print('three squared is', 3.0 ** 2)
+~~~
+{: .python}
+~~~
+half is 0.5
+three squared is 9.0
+~~~
+{: .output}
+
+
+
+
+
+
+## Variables only change value when something is assigned to them.
+
+*   If we make one cell in a spreadsheet depend on another,
+    and update the latter,
+    the former updates automatically.
+*   This does **not** happen in programming languages.
+
+~~~
+first = 1
+second = 5 * first
+first = 2
+print('first is', first, 'and second is', second)
+~~~
+{: .python}
+~~~
+first is 2 and second is 5
+~~~
+{: .output}
+
+*   The computer reads the value of `first` when doing the multiplication,
+    creates a new value, and assigns it to `second`.
+*   After that, `second` does not remember where it came from.
+
+-->
 
 ## You can use the "+" and "*" operators on strings.
 
@@ -137,117 +303,7 @@ TypeError: object of type 'int' has no len()
 ~~~
 {: .error}
 
-## Must convert numbers to strings or vice versa when operating on them.
 
-*   Cannot add numbers and strings.
-
-~~~
-print(1 + 'A')
-~~~
-{: .python}
-~~~
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-<ipython-input-4-fe4f54a023c6> in <module>()
-----> 1 print(1 + '2')
-
-TypeError: unsupported operand type(s) for +: 'int' and 'str'
-~~~
-{: .error}
-
-*   Not allowed because it's ambiguous: should `1 + '2'` be `3` or `'12'`?
-*   Some types can be converted to other types by using the type name as a function.
-
-~~~
-print(1 + int('2'))
-print(str(1) + '2')
-~~~
-{: .python}
-~~~
-3
-12
-~~~
-{: .output}
-
-## Can mix integers and floats freely in operations.
-
-*   Integers and floating-point numbers can be mixed in arithmetic.
-    *   Python automatically converts integers to floats as needed.
-
-~~~
-print('half is', 1 / 2.0)
-print('three squared is', 3.0 ** 2)
-~~~
-{: .python}
-~~~
-half is 0.5
-three squared is 9.0
-~~~
-{: .output}
-
-## Variables only change value when something is assigned to them.
-
-*   If we make one cell in a spreadsheet depend on another,
-    and update the latter,
-    the former updates automatically.
-*   This does **not** happen in programming languages.
-
-~~~
-first = 1
-second = 5 * first
-first = 2
-print('first is', first, 'and second is', second)
-~~~
-{: .python}
-~~~
-first is 2 and second is 5
-~~~
-{: .output}
-
-*   The computer reads the value of `first` when doing the multiplication,
-    creates a new value, and assigns it to `second`.
-*   After that, `second` does not remember where it came from.
-
-> ## Fractions
->
-> What type of value is 3.4?
-> How can you find out?
->
-> > ## Solution
-> >
-> > It is a floating-point number (often abbreviated "float").
-> >
-> > ~~~
-> > print(type(3.4))
-> > ~~~
-> > {: .python}
-> > ~~~
-> > <class 'float'>
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
-
-> ## Automatic Type Conversion
->
-> What type of value is 3.25 + 4?
->
-> > ## Solution
-> >
-> > It is a float:
-> > integers are automatically converted to floats as necessary.
-> >
-> > ~~~
-> > result = 3.25 + 4
-> > print(result, 'is', type(result))
-> > ~~~
-> > {: .python}
-> > ~~~
-> > 7.25 is <class 'float'>
-> > ~~~
-> > {: .output}
-> {: .solution}
-{: .challenge}
 
 > ## Choose a Type
 >
@@ -292,17 +348,6 @@ first is 2 and second is 5
 > 5 % 3: 2
 > ~~~
 > {: .output}
->
-> However in Python2 (and other languages), the `/` operator between two integer types perform a floor (`//`) division. To perform a float division, we have to convert one of the integers to float.
->
-> ~~~
-> print('5 // 3:', 1)
-> print('5 / 3:', 1 )
-> print('5 / float(3):', 1.6666667 )
-> print('float(5) / 3:', 1.6666667 )
-> print('float(5 / 3):', 1.0 )
-> print('5 % 3:', 2)
-> ~~~
 >
 > If `num_subjects` is the number of subjects taking part in a study,
 > and `num_per_survey` is the number that can take part in a single survey,
@@ -399,30 +444,7 @@ first is 2 and second is 5
 > {: .solution}
 {: .challenge}
 
-> ## Arithmetic with Different Types
->
-> Which of the following will print 2.0?
-> Note: there may be more than one right answer.
->
-> ~~~
-> first = 1.0
-> second = "1"
-> third = "1.1"
-> ~~~
-> {: .python}
->
-> 1. `first + float(second)`
-> 2. `float(second) + float(third)`
-> 3. `first + int(third)`
-> 4. `first + int(float(third))`
-> 5. `int(first) + int(float(third))`
-> 6. `2.0 * second`
->
-> > ## Solution
-> >
-> > Answer: 1 and 4
-> {: .solution}
-{: .challenge}
+
 
 > ## Complex Numbers
 >
