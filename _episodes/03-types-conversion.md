@@ -245,7 +245,7 @@ first is 2 and second is 5
     creates a new value, and assigns it to `second`.
 *   After that, `second` does not remember where it came from.
 
--->
+
 
 ## You can use the "+" and "*" operators on strings.
 
@@ -468,3 +468,5 @@ TypeError: object of type 'int' has no len()
 > > 3. _4j, syntax error, depends on the value of j_
 > {: .solution}
 {: .challenge}
+
+-->
