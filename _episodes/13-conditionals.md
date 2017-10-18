@@ -106,9 +106,9 @@ for m in masses:
 ~~~
 {: .output}
 
-## Conditions are tested once, in order.
+## Conditions *short circuit*.
 
-*   Python steps through the branches of the conditional in order, testing each in turn.
+*   Python quits evaluating a multi-part conditional when it finds one that evaluates to `True`.
 *   So ordering matters.
 
 ~~~
