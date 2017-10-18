@@ -97,6 +97,7 @@ primes has become: [2, 3, 5, 7, 9]
 ~~~
 {: .output}
 
+*    sometimes useful to start with an empty list, append as you go along
 *   `append` is a *method* of lists.
     *   Like a function, but tied to a particular object.
 *   Use `object_name.method_name` to call methods.
